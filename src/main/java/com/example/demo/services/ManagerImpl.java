@@ -36,6 +36,8 @@ public class ManagerImpl implements ManagerService{
 	@Override
 	public boolean updateManager() {
 		
+	}
+		
 		
 		// TODO Auto-generated method stub
 		return false;
@@ -58,6 +60,7 @@ public class ManagerImpl implements ManagerService{
 
 	@Override
 	public boolean authorizeManager(String email, String password) {
+		
 		ArrayList<Manager> arr = new ArrayList<>();
 		if (email != null && password != null) {
 			for (Manager m: arr) {
