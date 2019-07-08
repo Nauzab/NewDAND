@@ -1,5 +1,7 @@
 package com.example.demo.model;
 
+import java.util.regex.Matcher;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -36,13 +38,14 @@ public class Manager {
 	@NotEmpty
 	@NotNull
 	@Size(min=6, max=20)
-	@Pattern(regexp="^[a-zA-Z0-9]{4,10}$", message="Password can consist of letters and numbers")
+	@Pattern(regexp="^[a-zA-Z0-9]{6,10}$", message="Password can consist of letters and numbers")
 	@Column(name="Password")
 	private String password;
 	
 	@NotEmpty
 	@NotNull
 	@Column(name="e-mail")
+	@Pattern(regexp= "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Z0-9.-]+\\.[A-Z]{2,}$", message= "Please, enter a valid e-mail")
 	private String email;
 	
 	public Manager() {
@@ -50,10 +53,8 @@ public class Manager {
 	}
 	
 	
-	
 
-	public Manager(int id, String name, String surname, String password, String email) {
-		this.id = id;
+	public Manager(String name, String surname, String password, String email) {
 		this.name = name;
 		this.surname = surname;
 		this.password = password;
@@ -95,9 +96,9 @@ public class Manager {
 	}
 
 	public void setEmail(String email) {
+		
 		this.email = email;
 	}
-	
 	
 	
 	
