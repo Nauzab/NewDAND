@@ -38,9 +38,9 @@ public class Administrator {
 	
 	@NotEmpty
 	@NotNull
-	@Size(min = 6 , max = 18) 
+	@Size(min = 6 , max = 18, message = "Invalid password") 
 	//allows only letters and digits
-	@Pattern(regexp= "^[a-zA-Z0-9]+$", message = "Not valid email adress")
+	@Pattern(regexp= "^[a-zA-Z0-9]+$", message = "Invalid password")
 	@Column(name ="Password")
 	private String password;
 	
