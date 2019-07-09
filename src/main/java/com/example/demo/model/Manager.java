@@ -1,4 +1,6 @@
-package com.example.model;
+package com.example.demo.model;
+
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,59 +13,58 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
-@Table(name = "Administrator")
-@Entity
-public class Administrator {
+@Entity // to use relation with other tables
+@Table(name="ManagerTable")//to create table automatically
+
+public class Manager {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name ="ID_a")
-	private int id_a;
+	@Id // value will be unique
+	@GeneratedValue(strategy=GenerationType.AUTO) // database will generate unique ID
+	@Column(name="ID_m")//id column will be in table
+	private int id;
 	
 	@NotEmpty
 	@NotNull
-	@Size(min = 2 , max = 10) 
-	//allow only letters
-	@Pattern(regexp= "[a-zA-z]+", message = "only letters allowed")
-	@Column(name ="Name")
+	@Pattern(regexp="[a-zA-z]+", message="Please write correct surname incuding only letters")
+	@Column(name="Name")
 	private String name;
 	
+	
 	@NotEmpty
 	@NotNull
-	@Size(min = 2 , max = 15) 
-	//allow only letters
-	@Pattern(regexp= "[a-zA-z]+", message = "only letters allowed")
-	@Column(name ="Surname")
+	@Pattern(regexp="[a-zA-z]+", message="Please write correct surname incuding only letters")
+	@Column(name="Surname")
 	private String surname;
 	
 	@NotEmpty
 	@NotNull
-	@Size(min = 6 , max = 18, message = "Invalid password") 
-	//allows only letters and digits
-	@Pattern(regexp= "^[a-zA-Z0-9]+$", message = "Invalid password")
-	@Column(name ="Password")
+	@Size(min=6, max=20)
+	@Pattern(regexp="^[a-zA-Z0-9]{6,10}$", message="Password can consist of letters and numbers")
+	@Column(name="Password")
 	private String password;
 	
 	@NotEmpty
 	@NotNull
-	//wont allow non email adress
-	@Pattern(regexp= "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Z0-9.-]+\\.[A-Z]{2,}$", message = "Not valid email adress")
-	@Column(name ="Email")
+	@Column(name="Email")
+	@Pattern(regexp= "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Z0-9.-]+\\.[A-Z]{2,}$", message= "Please, enter a valid e-mail")
 	private String email;
 	
+	public Manager() {
+		
+	}
 	
-	public Administrator() {}
 	
-	public Administrator(String name, String surname, String password, String email) {
-		super();
+
+	public Manager(String name, String surname, String password, String email) {
 		this.name = name;
 		this.surname = surname;
 		this.password = password;
 		this.email = email;
 	}
 
-	public int getId_a() {
-		return id_a;
+
+	public int getId() {
+		return id;
 	}
 
 
@@ -96,12 +97,10 @@ public class Administrator {
 	}
 
 	public void setEmail(String email) {
+		
 		this.email = email;
 	}
 	
 	
 	
-	
-	
-
 }

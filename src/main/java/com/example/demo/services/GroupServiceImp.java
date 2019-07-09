@@ -1,12 +1,12 @@
-package com.example.services;
+package com.example.demo.services;
 
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.model.Group;
-import com.example.repo.GroupRepo;
+import com.example.demo.model.Group;
+import com.example.demo.repo.GroupRepo;
 
 @Service
 public class GroupServiceImp implements GroupService{
@@ -50,6 +50,7 @@ public class GroupServiceImp implements GroupService{
 
 	@Override
 	public boolean deleteGroupById(int id) {
+		
 		if(groupRepo.existsById(id)) {
 			groupRepo.deleteById(id);
 			return true;

@@ -1,8 +1,8 @@
-package com.example.services;
+package com.example.demo.services;
 
 import java.util.ArrayList;
 
-import com.example.model.Group;
+import com.example.demo.model.Group;
 
 public interface GroupService {
 		

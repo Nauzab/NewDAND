@@ -1,13 +1,13 @@
-package com.example.services;
+package com.example.demo.services;
 
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.model.Group;
-import com.example.model.Registration;
-import com.example.repo.RegistrationRepo;
+import com.example.demo.model.Group;
+import com.example.demo.model.Registration;
+import com.example.demo.repo.RegistrationRepo;
 
 @Service
 public class RegistrationServiceImp implements RegistrationService{
@@ -17,7 +17,7 @@ public class RegistrationServiceImp implements RegistrationService{
 	@Override
 	public ArrayList<Registration> selectAll() {
 		
-		return regRepo.selectAll();
+		return null;
 	}
 
 	@Override

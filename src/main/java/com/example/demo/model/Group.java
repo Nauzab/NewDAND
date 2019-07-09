@@ -1,18 +1,16 @@
-package com.example.model;
+package com.example.demo.model;
 
 import javax.persistence.Column;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
-
-@Table(name = "Group")
+@Table(name = "GroupTable")
 @Entity
 public class Group {
 
@@ -23,8 +21,6 @@ public class Group {
 	
 	@NotEmpty
 	@NotNull
-	@Min(5) //skaitliskai vertibai ir min un max
-	@Max(43)
 	@Column(name ="Distance")
 	private double distance;
 

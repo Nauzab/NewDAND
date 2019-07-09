@@ -1,10 +1,10 @@
-package com.example.services;
+package com.example.demo.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.model.Administrator;
-import com.example.repo.AdministratorRepo;
+import com.example.demo.model.Administrator;
+import com.example.demo.repo.AdministratorRepo;
 
 @Service
 public class AdministratorServiceImp implements AdministratorService {

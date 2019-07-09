@@ -1,6 +1,6 @@
-package com.example.services;
+package com.example.demo.services;
 
-import com.example.model.Administrator;
+import com.example.demo.model.Administrator;
 
 public interface AdministratorService {
 

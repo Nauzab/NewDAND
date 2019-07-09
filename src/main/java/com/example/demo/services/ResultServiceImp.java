@@ -1,17 +1,17 @@
-package com.example.services;
+package com.example.demo.services;
 
 import java.sql.Time;
 import java.util.ArrayList;
 
 import org.springframework.stereotype.Service;
 
-import com.example.model.Result;
+import com.example.demo.model.Result;
 
 @Service
 public class ResultServiceImp implements ResultService{
 
 	@Override
-	public ArrayList<Result> selectAll(int id_mar) {
+	public ArrayList<Result>selectAll() {
 		
 		return null;
 	}
@@ -39,5 +39,7 @@ public class ResultServiceImp implements ResultService{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+
 
 }

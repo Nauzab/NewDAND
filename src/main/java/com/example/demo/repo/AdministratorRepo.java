@@ -1,8 +1,8 @@
-package com.example.repo;
+package com.example.demo.repo;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.example.model.Administrator;
+import com.example.demo.model.Administrator;
 
 public interface AdministratorRepo extends CrudRepository<Administrator, Integer> {
 

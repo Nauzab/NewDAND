@@ -1,9 +1,9 @@
-package com.example.services;
+package com.example.demo.services;
 
 import java.util.ArrayList;
 
-import com.example.model.Group;
-import com.example.model.Registration;
+import com.example.demo.model.Group;
+import com.example.demo.model.Registration;
 
 public interface RegistrationService {
 	
