@@ -1,5 +1,13 @@
 package com.example.repo;
 
-public interface GroupRepo {
+import java.util.ArrayList;
 
+import org.springframework.data.repository.CrudRepository;
+
+import com.example.model.Group;
+
+public interface GroupRepo extends CrudRepository<Group, Integer> {
+	ArrayList<Group> SelectAll();
+	Group selectById(Integer id);
+	Group findByDistance(double distance);
 }
